@@ -1,0 +1,21 @@
+Launch an instance Using AWS CLI Windows PowerShell 
+
+Using AWS CLI:
+1.	Install and Configure AWS CLI: If you haven't already, install and configure the AWS CLI on your local machine, the website link to install it is below.
+2.	https://docs.aws.amazon.com/cli/latest/userguide/getting-started-version.html
+3.	Once it has been successfully installed type the code below to confirm the version and aws configure to setup the AWS CLI
+4.	aws --version  - it gives you the latest current version you have just installed
+5.	aws configure - This will connect your Windows powershell to your AWS console
+6.	You'll need to provide your AWS access key ID, secret access key, and preferred region during configuration.
+7.	to generate the AWS access key ID and secret access key, click on your name in the top right corner and click on security credentials, scroll down to Access keys and create access key, once you create the access it will give you Key ID and secret access key
+8.	Run aws ec2 run-instances Command: Use the aws ec2 run-instances command to launch an EC2 instance. Here's an example command:
+9.	Replace ami-12345678, sg-12345678, and subnet-12345678 with the appropriate values for your environment.
+
+10.	Monitor the Instance: Once the instance is launched, you can monitor its status using various AWS CLI commands like describe-instances, describe-instance-status, etc.
+To start your EC2 instances use the script below.
+aws ec2 start-instances --instance-ids i-019aa75f8179b76ba
+To stop your EC2 instances use the script below.
+aws ec2 stop-instances --instance-ids i-019aa75f8179b76ba
+The script to launch an EC2 instance in AWS CLI command line interface. 
+aws ec2 run-instances --image-id ami-0440d3b780d96b29d --instance-type t2.micro --key-name democlass --security-group-ids sg-03569662919233ded --subnet-id subnet-0ce0ed3d00b768b8d
+The unique thing is key pair, Security group, Subnet id, everything highlighted in red is unique and you will need to get that from your AWS console.
